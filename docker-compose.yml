@@ -1,0 +1,11 @@
+services:
+  redis:
+    image: redis:7-alpine
+    # AOF ligado: cada segundo o log de escritas é gravado em disco (durabilidade)
+    command: ["redis-server", "--appendonly", "yes", "--appendfsync", "everysec", "--save", "60 1000"]
+    ports: ["6379:6379"]
+    volumes: ["./data:/data"]
+  insight:                       # interface visual (opcional)
+    image: redis/redisinsight:latest
+    ports: ["5540:5540"]
+    depends_on: [redis]
