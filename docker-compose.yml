@@ -10,7 +10,7 @@ services:
     ports: ["5540:5540"]
     depends_on: [redis]
 # ==========================================================
-# APRESENTAÇÃO: INSTALAÇÃO E OTIMIZAÇÃO DO REDIS
+#  INSTALAÇÃO E OTIMIZAÇÃO DO REDIS
 # ==========================================================
 
 # Para executar nosso projeto, utilizamos o Docker.
