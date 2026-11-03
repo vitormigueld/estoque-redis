@@ -3,7 +3,7 @@
 **Problema:** a lanchonete do campus controla estoque em caderno/planilha: não sabe o que está acabando, não tem histórico e vende acima do saldo real.
 **Solução:** API REST (Java + Spring Boot) com estoque em Redis: cadastro de produtos, entradas/saídas **atômicas** com histórico, alertas de reposição e ranking de mais vendidos.
 **Banco:** Redis 7 (NoSQL em memória, chave-valor / multi-modelo).
-**Equipe:** _(nomes dos integrantes)_
+**Equipe:** Kauã Lopes, Rafael Lima, Vitor Miguel
 
 > **Classificação:** Redis é nativamente *chave-valor com estruturas de dados* (Hash, Set, Sorted Set, Stream). O enunciado pede "documentos ou grafos": confirme com o professor. Se exigir documento puro, a mesma modelagem migra para **Redis Stack (RedisJSON + RediSearch)**, que guarda documentos JSON e cria índices secundários.
 
