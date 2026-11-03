@@ -9,3 +9,44 @@ services:
     image: redis/redisinsight:latest
     ports: ["5540:5540"]
     depends_on: [redis]
+# ==========================================================
+# APRESENTAÇÃO: INSTALAÇÃO E OTIMIZAÇÃO DO REDIS
+# ==========================================================
+
+# Para executar nosso projeto, utilizamos o Docker.
+# Ele permite executar o Redis em um ambiente isolado,
+# facilitando a instalação e a configuração do sistema.
+
+# O comando docker compose up -d inicia os serviços
+# necessários para o funcionamento da aplicação.
+
+# Também utilizamos o RedisInsight, que oferece
+# uma interface visual para acompanhar os dados do banco.
+
+# Para verificar se o Redis está funcionando,
+# podemos utilizar o comando redis-cli ping.
+# Se tudo estiver correto, receberemos a resposta PONG.
+
+# ==========================================================
+# OTIMIZAÇÃO
+# ==========================================================
+
+# O maxmemory define o limite de memória que o Redis
+# pode utilizar.
+
+# Utilizamos a política noeviction para impedir que
+# dados sejam removidos automaticamente quando a
+# memória estiver cheia.
+
+# Também utilizamos o AOF com everysec, que registra
+# as alterações aproximadamente a cada segundo,
+# ajudando a proteger as informações armazenadas.
+
+# Outra boa prática é evitar comandos muito pesados,
+# como KEYS *, em ambientes de produção.
+
+# Podemos utilizar Pipeline para enviar vários comandos
+# em uma única comunicação, melhorando o desempenho.
+
+# O objetivo dessas configurações é manter o banco
+# rápido, estável e com maior segurança dos dados.
