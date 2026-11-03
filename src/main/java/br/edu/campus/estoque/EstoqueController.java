@@ -66,3 +66,26 @@ public class EstoqueController {
         return repo.maisVendidos(top);
     }
 }
+
+/*
+==========================================================
+ENCERRAMENTO DA APRESENTAÇÃO
+==========================================================
+
+Para finalizar, nosso projeto demonstra como o Redis
+pode ser utilizado para resolver um problema real
+de controle de estoque.
+
+Com ele, conseguimos cadastrar produtos, controlar
+entradas e saídas, registrar o histórico de movimentações,
+identificar produtos com estoque baixo e acompanhar
+os produtos mais vendidos.
+
+Assim, conseguimos demonstrar na prática como as
+estruturas de dados do Redis podem ser utilizadas
+para desenvolver um sistema rápido e eficiente.
+
+Obrigado pela atenção!
+Estamos à disposição para perguntas.
+==========================================================
+*/
