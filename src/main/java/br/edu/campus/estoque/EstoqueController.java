@@ -86,6 +86,5 @@ estruturas de dados do Redis podem ser utilizadas
 para desenvolver um sistema rápido e eficiente.
 
 Obrigado pela atenção!
-Estamos à disposição para perguntas.
 ==========================================================
 */
