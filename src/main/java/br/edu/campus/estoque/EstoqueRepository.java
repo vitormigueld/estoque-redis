@@ -64,7 +64,7 @@ public class EstoqueRepository {
     }
 /*
 ==========================================================
-APRESENTAÇÃO VANTAGENS E DESVANTAGENS DO REDIS
+ VANTAGENS E DESVANTAGENS DO REDIS
 ==========================================================
 
 Agora vamos falar sobre as vantagens e desvantagens
