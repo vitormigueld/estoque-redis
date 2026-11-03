@@ -62,7 +62,50 @@ public class EstoqueRepository {
         });
         return m;
     }
+/*
+==========================================================
+APRESENTAÇÃO VANTAGENS E DESVANTAGENS DO REDIS
+==========================================================
 
+Agora vamos falar sobre as vantagens e desvantagens
+do Redis.
+
+Uma das principais vantagens é a velocidade,
+pois ele trabalha principalmente com dados armazenados
+na memória RAM.
+
+Outra vantagem são suas estruturas de dados prontas,
+como Hash, Set, Sorted Set e Stream.
+
+No nosso projeto, utilizamos essas estruturas para
+armazenar produtos, organizar categorias, registrar
+movimentações e criar o ranking dos mais vendidos.
+
+Também temos as operações atômicas, que são importantes
+para evitar inconsistências no estoque.
+
+Por exemplo, se dois caixas tentarem vender a última
+unidade de um produto ao mesmo tempo, o sistema consegue
+controlar essa operação e impedir que o estoque fique
+negativo.
+
+==========================================================
+DESVANTAGENS
+==========================================================
+
+Apesar das vantagens, o Redis também possui limitações.
+
+A primeira é que a memória RAM possui um custo maior
+e uma capacidade limitada em comparação com discos.
+
+Outra desvantagem é que ele não trabalha com consultas
+relacionais como os bancos SQL, ou seja, não possui
+operações JOIN da mesma maneira.
+
+Além disso, alguns índices precisam ser criados
+e mantidos manualmente, como fizemos com as categorias
+e os alertas de estoque baixo.
+*/
     // ---------- CREATE ----------
     public Map<String, Object> criarProduto(ProdutoIn p) {
         Long ok = run(criar, List.of(prod(p.sku()), IDX, CAT + p.categoria(), ALERTA),
@@ -123,6 +166,33 @@ public class EstoqueRepository {
         }
         return out;
     }
+/*
+==========================================================
+ MELHORIAS FUTURAS
+==========================================================
+
+Pensando em melhorias futuras para o nosso projeto,
+existem algumas tecnologias que poderiam ser adicionadas.
+
+Uma delas é o RedisJSON, que permite armazenar dados
+no formato JSON, facilitando o trabalho com documentos.
+
+Também temos o RediSearch, que permite realizar pesquisas
+mais avançadas e criar índices para encontrar informações.
+
+Outra possibilidade é utilizar o Pub/Sub, que permite
+enviar notificações automaticamente.
+
+Por exemplo, quando um produto atingir o estoque mínimo,
+o sistema poderia enviar um aviso informando que é
+necessário realizar uma reposição.
+
+Também poderíamos implementar o Pipeline para melhorar
+o desempenho das consultas.
+
+Com essas melhorias, nosso sistema poderia se tornar
+ainda mais completo e eficiente.
+*/
 
     // ---------- UPDATE ----------
     public Map<String, Object> atualizar(String sku, ProdutoUp u) {
